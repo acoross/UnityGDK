@@ -2,7 +2,10 @@
 
 # Modify "../core-sdk.version" and run this script to download the new version of the CoreSDK and supporting tools.
 
-set -e -u -x -o pipefail
+set -e -u -o pipefail
+if [[ -n "${DEBUG-}" ]]; then
+  set -x
+fi
 
 cd "$(dirname "$0")/../"
 
